@@ -1,11 +1,15 @@
 .App {
   text-align: center;
 }
+.header {
+  color: rgb(38, 0, 255);
+  text-align: center;
+  padding-top: 20px;
+  font-family: arial, sans-serif;
+}
 .container {
-  width: 700px;
-  margin: 60px 200px;
+  margin: 60px;
   background: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
-  list-style: none;
   min-height: 50vh;
   display: flex;
   flex-direction: column;
@@ -13,20 +17,11 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: rgb(11, 14, 3);
+  border-radius: 20px;
+  border: 1px solid #dadde1;
+  font-family: arial, sans-serif;
 }
-.btnSearch {
-  font-size: 20px;
-  background: blue;
-  color: azure;
-  margin: 10px;
-  border-radius: 5px;
-  cursor: pointer;
-}
-.inputForm {
-  font-size: 20px;
-  border: #ace0f9;
-  border-radius: 5px;
-}
+
 .list {
   list-style: none;
 }

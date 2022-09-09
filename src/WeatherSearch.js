@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "./App.css";
+import "bootstrap/dist/css/bootstrap.css";
 
 export default function WeatherSearch() {
   const [city, setCity] = useState("");
@@ -10,6 +11,7 @@ export default function WeatherSearch() {
   function displayWeather(response) {
     setLoaded(true);
     setWeather({
+      city: response.data.name,
       temperature: response.data.main.temp,
       wind: response.data.wind.speed,
       humidity: response.data.main.humidity,
@@ -32,12 +34,12 @@ export default function WeatherSearch() {
   let form = (
     <form onSubmit={handleSubmit}>
       <input
-        className="inputForm"
+        class="form-control shadow-sm"
         type="search"
         placeholder="Enter a city.."
         onChange={updateCity}
       />
-      <button className="btnSearch" type="Submit">
+      <button class="form-control btn btn-primary shadow-sm" type="Submit">
         Search
       </button>
     </form>
@@ -48,6 +50,7 @@ export default function WeatherSearch() {
       <div className="container">
         {form}
         <ul className="list">
+          <li>City: {weather.city}</li>
           <li>Temperature: {Math.round(weather.temperature)}°C</li>
           <li>Description: {weather.description}</li>
           <li>Humidity: {weather.humidity}%</li>
